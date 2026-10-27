@@ -1,0 +1,370 @@
+---
+title: "Data Management and Longitudinal Health Data Analysis"
+author: "Natsumi Matsue"
+date: "2026-10-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Project Overview
+
+This portfolio demonstrates practical R programming skills in data management, quality assurance, and longitudinal health data analysis.
+Using an educational hypertension study data set, the project illustrates a reproducible analytical workflow, including data import, validation, duplicate detection, data integration, variable derivation, descriptive analysis, and visualization.
+The analysis focuses on changes in systolic blood pressure (SBP) across study visits and differences between intervention and usual care groups.
+
+## Analytical Workflow
+
+1. Data Import and Validation
+2. Data Quality Assessment
+3. Duplicate Detection and Data Integration
+4. Longitudinal Data Transformation
+5. Variable Derivation and Missing Data Handling
+6. Descriptive Analysis and Data Visualization
+7. Reproducibility and Quality Assurance Checks
+
+
+```{r load-packages, message=FALSE, warning=FALSE}
+library(readr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(here)
+```
+
+
+```{r}
+# Check available data files
+list.files(here::here("data"))
+
+# Verify that all required files exist
+required_files <- c(
+  "edu_htn_subjects.csv",
+  "edu_htn_visits.csv",
+  "edu_htn_analysis.csv",
+  "edu_htn_adherence.csv"
+)
+
+stopifnot(
+  all(file.exists(here::here("data", required_files)))
+)
+
+cat("All required data files found.\n")
+```
+
+## 1. Data Import and Validation
+This section imports subject-level and visit-level data with explicitly defined variable types to ensure consistency and prevent data parsing errors.
+```{r}
+
+subjects <- read_csv(
+  here("data", "edu_htn_subjects.csv"),
+  col_types = cols(
+    subject_id = col_character(),
+    arm = col_character(),
+    site = col_character(),
+    age = col_double(),
+    sex = col_character(),
+    race = col_character(),
+    bmi = col_double(),
+    sbp_base = col_double(),
+    randomized = col_character(),
+    randomization_date = col_date(format = "%Y-%m-%d"),
+    first_dose_date = col_date(format = "%Y-%m-%d"),
+    .default = col_guess()
+  )
+)
+
+visits <- read_csv(
+  here("data", "edu_htn_visits.csv"),
+  col_types = cols(
+    subject_id = col_character(),
+    visit_code = col_character(),
+    visit_date = col_date(format = "%Y-%m-%d"),
+    sbp = col_double(),
+    week = col_double()
+  )
+)
+
+# Verify successful imports
+cat("Subjects:", nrow(subjects), "rows\n")
+cat("Visits:", nrow(visits), "rows\n")
+
+# Check for parsing errors
+stopifnot(
+  nrow(problems(subjects)) == 0,
+  nrow(problems(visits)) == 0
+)
+
+cat("Data imported successfully with no parsing errors.\n")
+```
+## 2. Data Quality Assessment
+This section evaluates missing data and checks the completeness of subject-level and visit-level datasets before data integration and analysis.
+```{r}
+# Summarize missing values in subject-level data
+missing_subjects <- subjects |>
+  summarise(across(everything(), ~ sum(is.na(.)))) |>
+  pivot_longer(
+    cols = everything(),
+    names_to = "variable",
+    values_to = "n_missing"
+  ) |>
+  arrange(desc(n_missing))
+
+# Summarize missing values in visit-level data
+missing_visits <- visits |>
+  summarise(across(everything(), ~ sum(is.na(.)))) |>
+  pivot_longer(
+    cols = everything(),
+    names_to = "variable",
+    values_to = "n_missing"
+  ) |>
+  arrange(desc(n_missing))
+
+# Display results
+print(missing_subjects)
+print(missing_visits)
+
+```
+### Duplicate Detection and Key Integrity
+
+```{r}
+# Check duplicate subject IDs
+duplicate_subjects <- subjects |>
+  count(subject_id) |>
+  filter(n > 1)
+
+# Check duplicate subject-visit combinations
+duplicate_visits <- visits |>
+  count(subject_id, visit_code) |>
+  filter(n > 1)
+
+# Identify visit records without a matching subject
+orphan_visits <- anti_join(
+  visits,
+  subjects,
+  by = "subject_id"
+)
+
+# Summarize quality checks
+cat("Duplicate subject IDs:", nrow(duplicate_subjects), "\n")
+cat("Duplicate subject-visit pairs:", nrow(duplicate_visits), "\n")
+cat("Orphan visit records:", nrow(orphan_visits), "\n")
+
+# Validate data integrity
+stopifnot(
+  nrow(duplicate_subjects) == 0,
+  nrow(duplicate_visits) == 0,
+  nrow(orphan_visits) == 0
+)
+
+cat("All key integrity checks passed.\n")
+```
+
+## 3. Data Integration
+Subject-level demographic information is merged with visit-level blood pressure measurements using a many-to-one relationship. Key integrity and row counts are verified to prevent unintended duplication or loss of records.
+```{r}
+
+# Merge visit-level data with subject-level characteristics
+visit_plus <- visits |>
+  left_join(
+    subjects |>
+      select(subject_id, arm, age, sex, site),
+    by = "subject_id",
+    relationship = "many-to-one"
+  )
+
+# Verify that the join preserved all visit records
+stopifnot(
+  nrow(visit_plus) == nrow(visits),
+  sum(is.na(visit_plus$arm)) == 0,
+  sum(is.na(visit_plus$age)) == 0
+)
+
+# Display dimensions of merged dataset
+cat("Merged dataset:", nrow(visit_plus), "rows,",
+    ncol(visit_plus), "columns\n")
+
+cat("Data integration completed successfully.\n")
+
+# Preview merged dataset
+head(visit_plus)
+```
+
+## 4. Longitudinal Data Transformation
+Visit-level blood pressure measurements are reshaped from long to wide format to support participant-level longitudinal analysis. Each participant has one row, with separate columns for systolic blood pressure measurements at each study visit.
+```{r}
+
+# Reshape longitudinal SBP measurements into wide format
+sbp_wide <- visits |>
+  select(subject_id, visit_code, sbp) |>
+  pivot_wider(
+    names_from = visit_code,
+    values_from = sbp,
+    names_prefix = "sbp_"
+  )
+
+# Verify that each participant has one row
+stopifnot(
+  nrow(sbp_wide) == nrow(subjects),
+  n_distinct(sbp_wide$subject_id) == nrow(sbp_wide)
+)
+
+# Display the reshaped dataset
+cat("Wide dataset:", nrow(sbp_wide), "rows,",
+    ncol(sbp_wide), "columns\n")
+
+head(sbp_wide)
+```
+
+## 5. Variable Derivation and Missing Data Handling
+Changes in systolic blood pressure are calculated relative to the baseline visit. A participant is classified as a responder if their Week 12 SBP decreased by at least 10 mmHg. Missing outcome values are preserved rather than treated as non-response.
+```{r}
+
+# Derive changes from baseline at each follow-up visit
+sbp_derived <- sbp_wide |>
+  mutate(
+    chg_wk4  = sbp_WEEK4  - sbp_BASELINE,
+    chg_wk8  = sbp_WEEK8  - sbp_BASELINE,
+    chg_wk12 = sbp_WEEK12 - sbp_BASELINE
+  )
+
+# Classify Week 12 responders
+sbp_derived <- sbp_derived |>
+  mutate(
+    responder = case_when(
+      is.na(chg_wk12) ~ NA,
+      chg_wk12 <= -10 ~ TRUE,
+      TRUE ~ FALSE
+    )
+  )
+
+# Verify change calculations and missing value handling
+stopifnot(
+  sum(!is.na(sbp_derived$chg_wk12)) == 215,
+  sum(is.na(sbp_derived$responder)) ==
+    sum(is.na(sbp_derived$chg_wk12))
+)
+
+# Summarize derived variables
+cat("Participants with observed Week 12 change:",
+    sum(!is.na(sbp_derived$chg_wk12)), "\n")
+
+cat("Participants with missing Week 12 change:",
+    sum(is.na(sbp_derived$chg_wk12)), "\n")
+
+cat("Week 12 responders:",
+    sum(sbp_derived$responder, na.rm = TRUE), "\n")
+
+head(sbp_derived)
+```
+
+## 6. Descriptive Analysis and Data Visualization
+Descriptive statistics are calculated to compare changes in systolic blood pressure and response rates between intervention and usual care groups. Participants with missing Week 12 outcomes are excluded from outcome-specific calculations but retained in the dataset.
+```{r}
+
+# Add treatment group information to derived dataset
+analysis_data <- sbp_derived |>
+  left_join(
+    subjects |> select(subject_id, arm),
+    by = "subject_id",
+    relationship = "one-to-one"
+  )
+
+# Confirm all subjects are retained
+stopifnot(
+  nrow(analysis_data) == nrow(subjects),
+  sum(is.na(analysis_data$arm)) == 0
+)
+
+# Summarize Week 12 outcomes by treatment group
+arm_summary <- analysis_data |>
+  group_by(arm) |>
+  summarise(
+    n_total = n(),
+    n_observed = sum(!is.na(chg_wk12)),
+    n_missing = sum(is.na(chg_wk12)),
+    mean_change = round(mean(chg_wk12, na.rm = TRUE), 2),
+    sd_change = round(sd(chg_wk12, na.rm = TRUE), 2),
+    n_responders = sum(responder, na.rm = TRUE),
+    responder_rate = round(
+      100 * mean(responder, na.rm = TRUE), 1
+    ),
+    .groups = "drop"
+  )
+
+print(arm_summary)
+```
+```{r}
+
+# Visualize Week 12 SBP changes by treatment group
+ggplot(
+  analysis_data |> filter(!is.na(chg_wk12)),
+  aes(x = arm, y = chg_wk12, fill = arm)
+) +
+  geom_boxplot(
+    width = 0.5,
+    alpha = 0.7,
+    outlier.shape = 16
+  ) +
+  geom_hline(
+    yintercept = 0,
+    linetype = "dashed",
+    color = "gray40"
+  ) +
+  labs(
+    title = "Change in Systolic Blood Pressure at Week 12",
+    subtitle = "Intervention vs. Usual Care",
+    x = "Treatment Group",
+    y = "Change in SBP from Baseline (mmHg)"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "none")
+```
+
+### Results Interpretation
+
+### Results Interpretation
+Among participants with observed Week 12 outcomes, the intervention group showed a greater mean reduction in systolic blood pressure (SBP) than the usual care group (-8.21 vs. -2.31 mmHg).
+The responder rate was also higher in the intervention group (36.1%) compared with the usual care group (7.5%). A responder was defined as a participant whose SBP decreased by at least 10 mmHg from baseline.
+The boxplot illustrates a downward shift in SBP changes among intervention participants relative to usual care participants.
+These findings are descriptive and do not establish statistical significance or causal effects. Participants with missing Week 12 outcomes were excluded from outcome-specific summaries, which may introduce bias if missingness is related to treatment response.
+
+## 7. Reproducibility and Quality Assurance Checks
+Final assertions verify the integrity of the analytical dataset, consistency of derived variables, and preservation of missing outcome values.
+
+```{r}
+
+# Verify the analytical dataset
+stopifnot(
+  nrow(analysis_data) == 240,
+  n_distinct(analysis_data$subject_id) == 240,
+  sum(is.na(analysis_data$chg_wk12)) == 25,
+  sum(analysis_data$responder, na.rm = TRUE) == 47,
+  sum(arm_summary$n_total) == 240,
+  sum(arm_summary$n_observed) == 215,
+  sum(arm_summary$n_missing) == 25
+)
+
+# Verify the responder classification
+stopifnot(
+  all(
+    analysis_data$responder[!is.na(analysis_data$chg_wk12)] ==
+      (analysis_data$chg_wk12[!is.na(analysis_data$chg_wk12)] <= -10)
+  )
+)
+
+cat("All final quality assurance checks passed.\n")
+
+# Record the R environment for reproducibility
+sessionInfo()
+```
+
+
+
+
+
+
+
