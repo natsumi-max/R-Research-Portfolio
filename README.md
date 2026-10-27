@@ -35,7 +35,7 @@ The project was developed from coursework in BIOSTAT 203A (Data Management in Bi
 
 - `health_data_analysis.Rmd` — R Markdown source code
 - `health_data_analysis.html` — Rendered analysis report
-- `data/` — Input CSV files (not for public distribution without permission)
+- `data/` — Educational hypertension study CSV datasets shared with instructor permission.
 
 ## How to Run
 
