@@ -1,0 +1,241 @@
+subject_id,arm,site,age,sex,race,bmi,sbp_base,randomized,randomization_date,first_dose_date
+E001,Usual care,UCLA,66,Male,Black,22.8,167.2,Y,2026-01-05,2026-01-05
+E002,Intervention,Harbor,66,Male,Asian,30.4,147.5,Y,2026-01-06,2026-01-06
+E003,Usual care,Valley,57,Female,Asian,26.2,139.4,Y,2026-01-07,2026-01-07
+E004,Intervention,Coastal,43,Male,White,22.4,142.0,Y,2026-01-08,2026-01-08
+E005,Usual care,UCLA,56,Female,White,22.3,144.8,Y,2026-01-09,2026-01-09
+E006,Intervention,Harbor,71,Male,Other or multiple,31.1,144.3,Y,2026-01-10,2026-01-10
+E007,Usual care,Valley,79,Female,Black,35.4,162.8,Y,2026-01-11,2026-01-11
+E008,Intervention,Coastal,45,Male,Black,34.6,144.7,Y,2026-01-12,2026-01-12
+E009,Usual care,UCLA,56,Male,Asian,25.4,154.9,Y,2026-01-13,2026-01-13
+E010,Intervention,Harbor,66,Female,Black,28.3,139.0,Y,2026-01-14,2026-01-14
+E011,Usual care,Valley,37,Male,White,34.3,152.1,Y,2026-01-15,2026-01-15
+E012,Intervention,Coastal,56,Female,Black,35.1,143.8,Y,2026-01-16,2026-01-16
+E013,Usual care,UCLA,54,Female,White,29.0,141.6,Y,2026-01-17,2026-01-17
+E014,Intervention,Harbor,76,Female,Black,25.5,136.2,Y,2026-01-18,2026-01-18
+E015,Usual care,Valley,36,Female,Asian,28.0,132.2,Y,2026-01-19,2026-01-19
+E016,Intervention,Coastal,59,Female,Asian,30.6,154.5,Y,2026-01-20,
+E017,Usual care,UCLA,49,Female,White,27.6,135.8,Y,2026-01-21,2026-01-21
+E018,Intervention,Harbor,63,Male,White,35.6,147.5,Y,2026-01-22,2026-01-22
+E019,Usual care,Valley,46,Male,White,26.7,154.7,Y,2026-01-23,2026-01-23
+E020,Intervention,Coastal,63,Female,Other or multiple,29.2,149.6,Y,2026-01-24,2026-01-24
+E021,Usual care,UCLA,63,Male,Asian,33.1,158.4,Y,2026-01-25,
+E022,Intervention,Harbor,47,Male,White,29.4,163.7,Y,2026-01-26,2026-01-26
+E023,Usual care,Valley,46,Male,Other or multiple,28.7,147.6,Y,2026-01-27,2026-01-27
+E024,Intervention,Coastal,60,Female,White,25.7,138.2,Y,2026-01-28,2026-01-28
+E025,Usual care,UCLA,59,Female,White,28.9,158.8,Y,2026-01-29,
+E026,Intervention,Harbor,54,Male,Other or multiple,32.1,150.7,Y,2026-01-30,
+E027,Usual care,Valley,60,Male,White,35.9,170.4,Y,2026-01-31,2026-01-31
+E028,Intervention,Coastal,62,Male,Black,21.7,152.8,Y,2026-02-01,2026-02-01
+E029,Usual care,UCLA,48,Female,Asian,25.7,144.5,Y,2026-02-02,2026-02-02
+E030,Intervention,Harbor,34,Female,White,24.2,143.4,Y,2026-02-03,2026-02-03
+E031,Usual care,Valley,64,Female,Other or multiple,33.2,144.6,Y,2026-02-04,2026-02-04
+E032,Intervention,Coastal,58,Male,Other or multiple,33.1,143.5,Y,2026-02-05,2026-02-05
+E033,Usual care,UCLA,50,Female,Black,27.6,138.9,Y,2026-02-06,2026-02-06
+E034,Intervention,Harbor,60,Male,White,25.0,136.0,Y,2026-02-07,2026-02-07
+E035,Usual care,Valley,48,Male,Black,29.9,148.0,Y,2026-02-08,2026-02-08
+E036,Intervention,Coastal,66,Male,Asian,27.9,158.0,Y,2026-02-09,2026-02-09
+E037,Usual care,UCLA,57,Female,Black,30.3,148.6,Y,2026-02-10,2026-02-10
+E038,Intervention,Harbor,37,Female,Black,23.3,145.9,Y,2026-02-11,2026-02-11
+E039,Usual care,Valley,69,Female,Other or multiple,34.9,154.5,Y,2026-02-12,2026-02-12
+E040,Intervention,Coastal,65,Male,White,22.7,162.8,Y,2026-02-13,2026-02-13
+E041,Usual care,UCLA,77,Female,White,20.2,159.7,Y,2026-02-14,2026-02-14
+E042,Intervention,Harbor,56,Female,Asian,28.0,157.8,Y,2026-02-15,2026-02-15
+E043,Usual care,Valley,39,Female,White,29.2,155.7,Y,2026-01-05,2026-01-05
+E044,Intervention,Coastal,43,Male,White,29.8,163.3,Y,2026-01-06,2026-01-06
+E045,Usual care,UCLA,52,Female,White,27.2,153.1,Y,2026-01-07,2026-01-07
+E046,Intervention,Harbor,60,Female,Black,32.8,142.1,Y,2026-01-08,2026-01-08
+E047,Usual care,Valley,49,Female,White,33.1,139.7,Y,2026-01-09,2026-01-09
+E048,Intervention,Coastal,60,Female,Black,28.6,163.2,Y,2026-01-10,2026-01-10
+E049,Usual care,UCLA,65,Female,White,30.3,148.0,Y,2026-01-11,2026-01-11
+E050,Intervention,Harbor,75,Male,Asian,29.2,148.3,Y,2026-01-12,2026-01-12
+E051,Usual care,Valley,75,Female,Asian,32.9,158.9,Y,2026-01-13,2026-01-13
+E052,Intervention,Coastal,68,Female,White,28.1,155.3,Y,2026-01-14,2026-01-14
+E053,Usual care,UCLA,55,Female,White,27.2,165.5,Y,2026-01-15,2026-01-15
+E054,Intervention,Harbor,65,Female,White,29.6,161.9,Y,2026-01-16,2026-01-16
+E055,Usual care,Valley,63,Male,White,32.8,152.6,Y,2026-01-17,2026-01-17
+E056,Intervention,Coastal,45,Male,Asian,32.8,157.7,Y,2026-01-18,2026-01-18
+E057,Usual care,UCLA,59,Female,Other or multiple,25.6,132,Y,2026-01-19,2026-01-19
+E058,Intervention,Harbor,46,Female,White,28.4,148.5,Y,2026-01-20,2026-01-20
+E059,Usual care,Valley,55,Female,Black,23.2,158.4,Y,2026-01-21,2026-01-21
+E060,Intervention,Coastal,58,Male,White,30.2,147.7,Y,2026-01-22,2026-01-22
+E061,Usual care,UCLA,48,Male,White,29.2,144.8,Y,2026-01-23,2026-01-23
+E062,Intervention,Harbor,63,Male,Black,32.8,146.5,Y,2026-01-24,2026-01-24
+E063,Usual care,Valley,62,Male,Asian,31.1,143.2,Y,2026-01-25,2026-01-25
+E064,Intervention,Coastal,45,Female,Black,34.6,139.1,Y,2026-01-26,2026-01-26
+E065,Usual care,UCLA,53,Female,Asian,36.1,158.8,Y,2026-01-27,2026-01-27
+E066,Intervention,Harbor,55,Female,Other or multiple,31.2,153.7,Y,2026-01-28,2026-01-28
+E067,Usual care,Valley,56,Male,Asian,31.1,144.2,Y,2026-01-29,2026-01-29
+E068,Intervention,Coastal,38,Female,White,33.6,144.7,Y,2026-01-30,2026-01-30
+E069,Usual care,UCLA,49,Female,White,36.1,149.2,Y,2026-01-31,2026-01-31
+E070,Intervention,Harbor,52,Male,White,22.7,162.9,Y,2026-02-01,2026-02-01
+E071,Usual care,Valley,49,Female,White,31.0,144.7,Y,2026-02-02,2026-02-02
+E072,Intervention,Coastal,64,Male,Asian,26.9,137.9,Y,2026-02-03,
+E073,Usual care,UCLA,58,Male,White,30.5,151.5,Y,2026-02-04,2026-02-04
+E074,Intervention,Harbor,47,Female,White,34.5,148.1,Y,2026-02-05,2026-02-05
+E075,Usual care,Valley,70,Male,White,26.1,167.9,Y,2026-02-06,2026-02-06
+E076,Intervention,Coastal,60,Female,White,26.6,137.8,Y,2026-02-07,2026-02-07
+E077,Usual care,UCLA,47,Male,Other or multiple,37.5,172.1,Y,2026-02-08,2026-02-08
+E078,Intervention,Harbor,48,Male,Asian,28.1,145.8,Y,2026-02-09,2026-02-09
+E079,Usual care,Valley,70,Female,White,29.4,154.1,Y,2026-02-10,2026-02-10
+E080,Intervention,Coastal,74,Male,White,35.3,139.0,Y,2026-02-11,2026-02-11
+E081,Usual care,UCLA,54,Female,White,25.4,149.2,Y,2026-02-12,2026-02-12
+E082,Intervention,Harbor,42,Female,White,27.5,141.1,Y,2026-02-13,2026-02-13
+E083,Usual care,Valley,51,Female,Asian,31.1,139.1,Y,2026-02-14,2026-02-14
+E084,Intervention,Coastal,53,Female,Other or multiple,28.7,156.5,Y,2026-02-15,2026-02-15
+E085,Usual care,UCLA,59,Female,White,34.0,140.4,Y,2026-01-05,2026-01-05
+E086,Intervention,Harbor,62,Female,White,23.8,142.3,Y,2026-01-06,2026-01-06
+E087,Usual care,Valley,74,Male,White,25.6,145.7,Y,2026-01-07,2026-01-07
+E088,Intervention,Coastal,41,Female,White,28.7,160.2,Y,2026-01-08,2026-01-08
+E089,Usual care,UCLA,69,Male,Asian,28.8,147.5,Y,2026-01-09,2026-01-09
+E090,Intervention,Harbor,66,Female,White,20.2,150.1,Y,2026-01-10,2026-01-10
+E091,Usual care,Valley,53,Male,Asian,31.0,137.8,Y,2026-01-11,2026-01-11
+E092,Intervention,Coastal,52,Male,White,30.6,160.9,Y,2026-01-12,2026-01-12
+E093,Usual care,UCLA,54,Male,Other or multiple,41.0,148.4,Y,2026-01-13,2026-01-13
+E094,Intervention,Harbor,45,Female,Asian,25.2,158.3,Y,2026-01-14,2026-01-14
+E095,Usual care,Valley,64,Male,White,29.0,158.9,Y,2026-01-15,2026-01-15
+E096,Intervention,Coastal,60,Male,Other or multiple,25.7,135.9,Y,2026-01-16,2026-01-16
+E097,Usual care,UCLA,69,Male,White,39.2,167.1,Y,2026-01-17,2026-01-17
+E098,Intervention,Harbor,61,Male,Asian,32.2,132,Y,2026-01-18,2026-01-18
+E099,Usual care,Valley,48,Female,Asian,25.4,171.9,Y,2026-01-19,2026-01-19
+E100,Intervention,Coastal,58,Female,White,29.7,145.8,Y,2026-01-20,2026-01-20
+E101,Usual care,UCLA,30,Male,Asian,35.4,143.9,Y,2026-01-21,2026-01-21
+E102,Intervention,Harbor,56,Female,White,33.5,158.7,Y,2026-01-22,2026-01-22
+E103,Usual care,Valley,63,Male,White,31.9,165.4,Y,2026-01-23,2026-01-23
+E104,Intervention,Coastal,58,Female,Asian,23.3,164.4,Y,2026-01-24,2026-01-24
+E105,Usual care,UCLA,62,Female,Black,29.6,139.7,Y,2026-01-25,2026-01-25
+E106,Intervention,Harbor,57,Male,White,27.7,152.1,Y,2026-01-26,2026-01-26
+E107,Usual care,Valley,46,Female,Asian,33.1,137.7,Y,2026-01-27,2026-01-27
+E108,Intervention,Coastal,51,Male,Asian,20.0,158.5,Y,2026-01-28,2026-01-28
+E109,Usual care,UCLA,65,Male,White,28.5,169.8,Y,2026-01-29,2026-01-29
+E110,Intervention,Harbor,72,Female,White,29.5,163.9,Y,2026-01-30,2026-01-30
+E111,Usual care,Valley,57,Female,White,26.4,154.3,Y,2026-01-31,2026-01-31
+E112,Intervention,Coastal,62,Female,White,33.8,161.5,Y,2026-02-01,2026-02-01
+E113,Usual care,UCLA,52,Female,White,30.6,138.3,Y,2026-02-02,2026-02-02
+E114,Intervention,Harbor,49,Female,Black,24.1,155.9,Y,2026-02-03,
+E115,Usual care,Valley,68,Female,Black,23.8,154.9,Y,2026-02-04,2026-02-04
+E116,Intervention,Coastal,59,Female,Asian,29.0,144.8,Y,2026-02-05,2026-02-05
+E117,Usual care,UCLA,43,Male,Other or multiple,22.3,147.3,Y,2026-02-06,2026-02-06
+E118,Intervention,Harbor,59,Male,Other or multiple,25.3,156.1,Y,2026-02-07,
+E119,Usual care,Valley,53,Female,White,32.8,163.4,Y,2026-02-08,2026-02-08
+E120,Intervention,Coastal,43,Female,White,33.9,151.0,Y,2026-02-09,2026-02-09
+E121,Usual care,UCLA,50,Male,Asian,33.5,149.2,Y,2026-02-10,2026-02-10
+E122,Intervention,Harbor,60,Male,Black,26.1,132,Y,2026-02-11,2026-02-11
+E123,Usual care,Valley,56,Male,Asian,32.0,142.5,Y,2026-02-12,2026-02-12
+E124,Intervention,Coastal,52,Male,Other or multiple,24.7,164.0,Y,2026-02-13,2026-02-13
+E125,Usual care,UCLA,62,Female,Asian,31.1,159.4,Y,2026-02-14,2026-02-14
+E126,Intervention,Harbor,54,Female,White,22.9,148.8,Y,2026-02-15,2026-02-15
+E127,Usual care,Valley,70,Female,White,27.5,151.4,Y,2026-01-05,2026-01-05
+E128,Intervention,Coastal,64,Female,Black,30.8,149.9,Y,2026-01-06,2026-01-06
+E129,Usual care,UCLA,44,Male,White,40.8,155.0,Y,2026-01-07,
+E130,Intervention,Harbor,55,Female,Other or multiple,32.2,155.7,Y,2026-01-08,2026-01-08
+E131,Usual care,Valley,48,Female,White,31.4,154.5,Y,2026-01-09,2026-01-09
+E132,Intervention,Coastal,52,Male,White,35.9,140.0,Y,2026-01-10,2026-01-10
+E133,Usual care,UCLA,64,Female,White,29.7,149.0,Y,2026-01-11,2026-01-11
+E134,Intervention,Harbor,38,Male,White,27.6,146.8,Y,2026-01-12,
+E135,Usual care,Valley,74,Male,Asian,24.7,159.5,Y,2026-01-13,
+E136,Intervention,Coastal,64,Female,Asian,26.5,149.7,Y,2026-01-14,2026-01-14
+E137,Usual care,UCLA,54,Female,Asian,33.7,154.7,Y,2026-01-15,2026-01-15
+E138,Intervention,Harbor,55,Female,Asian,28.1,168.3,Y,2026-01-16,
+E139,Usual care,Valley,75,Male,White,32.6,139.7,Y,2026-01-17,2026-01-17
+E140,Intervention,Coastal,66,Male,White,33.5,157.4,Y,2026-01-18,
+E141,Usual care,UCLA,61,Female,White,29.5,158.0,Y,2026-01-19,2026-01-19
+E142,Intervention,Harbor,66,Male,Black,22.9,157.3,Y,2026-01-20,2026-01-20
+E143,Usual care,Valley,54,Female,White,30.5,149.1,Y,2026-01-21,2026-01-21
+E144,Intervention,Coastal,40,Male,Black,29.4,132,Y,2026-01-22,2026-01-22
+E145,Usual care,UCLA,47,Female,White,40.6,152.7,Y,2026-01-23,2026-01-23
+E146,Intervention,Harbor,49,Female,Asian,19,144.6,Y,2026-01-24,2026-01-24
+E147,Usual care,Valley,68,Female,Black,35.1,158.8,Y,2026-01-25,
+E148,Intervention,Coastal,54,Female,Asian,25.8,151.4,Y,2026-01-26,2026-01-26
+E149,Usual care,UCLA,38,Male,Asian,28.6,155.1,Y,2026-01-27,2026-01-27
+E150,Intervention,Harbor,64,Female,White,31.2,149.9,Y,2026-01-28,2026-01-28
+E151,Usual care,Valley,71,Male,Black,22.3,132,Y,2026-01-29,2026-01-29
+E152,Intervention,Coastal,44,Female,Asian,29.7,154.9,Y,2026-01-30,2026-01-30
+E153,Usual care,UCLA,72,Male,Asian,26.3,147.2,Y,2026-01-31,2026-01-31
+E154,Intervention,Harbor,75,Male,White,36.8,144.4,Y,2026-02-01,2026-02-01
+E155,Usual care,Valley,75,Male,Black,21.2,170.0,Y,2026-02-02,2026-02-02
+E156,Intervention,Coastal,75,Male,White,23.5,157.9,Y,2026-02-03,2026-02-03
+E157,Usual care,UCLA,58,Male,White,34.1,142.9,Y,2026-02-04,2026-02-04
+E158,Intervention,Harbor,68,Female,Asian,24.9,145.5,Y,2026-02-05,2026-02-05
+E159,Usual care,Valley,65,Female,Asian,26.9,148.1,Y,2026-02-06,2026-02-06
+E160,Intervention,Coastal,49,Female,White,25.4,136.4,Y,2026-02-07,2026-02-07
+E161,Usual care,UCLA,61,Female,White,28.1,150.0,Y,2026-02-08,2026-02-08
+E162,Intervention,Harbor,67,Female,Asian,31.2,153.0,Y,2026-02-09,2026-02-09
+E163,Usual care,Valley,42,Female,White,35.2,157.2,Y,2026-02-10,2026-02-10
+E164,Intervention,Coastal,60,Female,Black,29.9,158.5,Y,2026-02-11,2026-02-11
+E165,Usual care,UCLA,64,Male,Asian,32.0,167.4,Y,2026-02-12,2026-02-12
+E166,Intervention,Harbor,53,Male,Other or multiple,20.6,150.2,Y,2026-02-13,2026-02-13
+E167,Usual care,Valley,41,Female,White,25.4,147.6,Y,2026-02-14,2026-02-14
+E168,Intervention,Coastal,59,Female,White,33.3,149.8,Y,2026-02-15,2026-02-15
+E169,Usual care,UCLA,51,Female,White,29.6,156.2,Y,2026-01-05,2026-01-05
+E170,Intervention,Harbor,63,Male,White,31.5,147.5,Y,2026-01-06,2026-01-06
+E171,Usual care,Valley,53,Male,Other or multiple,28.1,150.4,Y,2026-01-07,2026-01-07
+E172,Intervention,Coastal,51,Male,Black,24.7,138.6,Y,2026-01-08,2026-01-08
+E173,Usual care,UCLA,65,Female,White,20.6,145.0,Y,2026-01-09,2026-01-09
+E174,Intervention,Harbor,48,Male,Black,28.3,158.4,Y,2026-01-10,2026-01-10
+E175,Usual care,Valley,62,Female,White,38.3,156.3,Y,2026-01-11,2026-01-11
+E176,Intervention,Coastal,30,Male,Asian,24.4,132,Y,2026-01-12,2026-01-12
+E177,Usual care,UCLA,35,Female,White,27.6,166.4,Y,2026-01-13,2026-01-13
+E178,Intervention,Harbor,42,Female,Asian,27.2,156.7,Y,2026-01-14,2026-01-14
+E179,Usual care,Valley,63,Female,White,30.4,149.9,Y,2026-01-15,2026-01-15
+E180,Intervention,Coastal,69,Female,Asian,25.8,157.1,Y,2026-01-16,2026-01-16
+E181,Usual care,UCLA,50,Female,Asian,27.6,159.6,Y,2026-01-17,2026-01-17
+E182,Intervention,Harbor,49,Male,Asian,32.9,135.5,Y,2026-01-18,2026-01-18
+E183,Usual care,Valley,44,Male,Other or multiple,24.0,151.6,Y,2026-01-19,2026-01-19
+E184,Intervention,Coastal,70,Male,Black,26.6,150.6,Y,2026-01-20,2026-01-20
+E185,Usual care,UCLA,65,Male,Asian,30.3,158.0,Y,2026-01-21,2026-01-21
+E186,Intervention,Harbor,52,Female,Asian,35.7,159.5,Y,2026-01-22,2026-01-22
+E187,Usual care,Valley,57,Male,White,32.8,165.6,Y,2026-01-23,2026-01-23
+E188,Intervention,Coastal,44,Female,Black,29.0,150.6,Y,2026-01-24,2026-01-24
+E189,Usual care,UCLA,67,Male,White,23.7,146.7,Y,2026-01-25,2026-01-25
+E190,Intervention,Harbor,64,Male,White,27.1,147.2,Y,2026-01-26,2026-01-26
+E191,Usual care,Valley,60,Male,Black,21.6,168.0,Y,2026-01-27,2026-01-27
+E192,Intervention,Coastal,32,Female,Black,34.8,144.6,Y,2026-01-28,2026-01-28
+E193,Usual care,UCLA,56,Female,Other or multiple,34.6,156.0,Y,2026-01-29,2026-01-29
+E194,Intervention,Harbor,54,Male,White,23.9,154.0,Y,2026-01-30,2026-01-30
+E195,Usual care,Valley,47,Female,White,31.3,141.2,Y,2026-01-31,2026-01-31
+E196,Intervention,Coastal,48,Female,Asian,39.4,152.0,Y,2026-02-01,2026-02-01
+E197,Usual care,UCLA,60,Female,Other or multiple,32.5,139.6,Y,2026-02-02,2026-02-02
+E198,Intervention,Harbor,58,Male,White,33.6,146.0,Y,2026-02-03,2026-02-03
+E199,Usual care,Valley,68,Male,White,30.0,155.2,Y,2026-02-04,2026-02-04
+E200,Intervention,Coastal,47,Male,Asian,23.1,157.6,Y,2026-02-05,2026-02-05
+E201,Usual care,UCLA,57,Female,Black,20.4,157.2,Y,2026-02-06,2026-02-06
+E202,Intervention,Harbor,71,Female,Other or multiple,33.4,147.1,Y,2026-02-07,2026-02-07
+E203,Usual care,Valley,63,Female,White,36.9,142.0,Y,2026-02-08,2026-02-08
+E204,Intervention,Coastal,50,Female,White,33.3,153.8,Y,2026-02-09,2026-02-09
+E205,Usual care,UCLA,59,Male,Asian,26.3,152.2,Y,2026-02-10,2026-02-10
+E206,Intervention,Harbor,61,Female,White,30.7,139.9,Y,2026-02-11,2026-02-11
+E207,Usual care,Valley,75,Male,White,21.8,163.5,Y,2026-02-12,2026-02-12
+E208,Intervention,Coastal,77,Male,White,31.6,153.5,Y,2026-02-13,2026-02-13
+E209,Usual care,UCLA,51,Male,White,29.5,149.5,Y,2026-02-14,2026-02-14
+E210,Intervention,Harbor,69,Male,White,33.7,162.7,Y,2026-02-15,2026-02-15
+E211,Usual care,Valley,57,Male,Black,29.1,157.3,Y,2026-01-05,2026-01-05
+E212,Intervention,Coastal,54,Male,White,25.4,166.8,Y,2026-01-06,2026-01-06
+E213,Usual care,UCLA,59,Female,White,31.7,149.5,Y,2026-01-07,2026-01-07
+E214,Intervention,Harbor,58,Male,Other or multiple,29.4,176.6,Y,2026-01-08,2026-01-08
+E215,Usual care,Valley,43,Female,White,29.3,155.3,Y,2026-01-09,2026-01-09
+E216,Intervention,Coastal,57,Female,Asian,29.6,157.0,Y,2026-01-10,2026-01-10
+E217,Usual care,UCLA,43,Female,White,31.6,142.3,Y,2026-01-11,2026-01-11
+E218,Intervention,Harbor,72,Female,White,31.0,149.8,Y,2026-01-12,2026-01-12
+E219,Usual care,Valley,54,Male,Other or multiple,33.0,139.2,Y,2026-01-13,2026-01-13
+E220,Intervention,Coastal,41,Female,White,27.4,168.4,Y,2026-01-14,2026-01-14
+E221,Usual care,UCLA,58,Male,White,21.5,152.2,Y,2026-01-15,2026-01-15
+E222,Intervention,Harbor,53,Female,White,34.4,159.4,Y,2026-01-16,2026-01-16
+E223,Usual care,Valley,46,Female,White,29.7,135.5,Y,2026-01-17,2026-01-17
+E224,Intervention,Coastal,56,Female,Asian,37.7,145.5,Y,2026-01-18,2026-01-18
+E225,Usual care,UCLA,65,Female,Black,28.3,152.8,Y,2026-01-19,2026-01-19
+E226,Intervention,Harbor,49,Female,Black,32.8,144.0,Y,2026-01-20,
+E227,Usual care,Valley,63,Female,Other or multiple,30.0,146.1,Y,2026-01-21,2026-01-21
+E228,Intervention,Coastal,59,Male,Asian,19,159.8,Y,2026-01-22,2026-01-22
+E229,Usual care,UCLA,55,Female,Black,32.4,134.4,Y,2026-01-23,2026-01-23
+E230,Intervention,Harbor,42,Male,Black,30.5,145.1,Y,2026-01-24,2026-01-24
+E231,Usual care,Valley,49,Male,Black,31.2,144.2,Y,2026-01-25,2026-01-25
+E232,Intervention,Coastal,71,Female,Black,34.3,136.8,Y,2026-01-26,
+E233,Usual care,UCLA,58,Male,White,28.5,138.0,Y,2026-01-27,2026-01-27
+E234,Intervention,Harbor,54,Male,White,29.3,158.6,Y,2026-01-28,2026-01-28
+E235,Usual care,Valley,55,Male,White,27.5,136.5,Y,2026-01-29,2026-01-29
+E236,Intervention,Coastal,41,Male,White,28.5,158.0,Y,2026-01-30,2026-01-30
+E237,Usual care,UCLA,54,Male,Black,36.9,145.5,Y,2026-01-31,2026-01-31
+E238,Intervention,Harbor,50,Female,White,37.1,137.3,Y,2026-02-01,2026-02-01
+E239,Usual care,Valley,73,Female,Black,30.3,158.1,Y,2026-02-02,2026-02-02
+E240,Intervention,Coastal,61,Female,White,29.8,142.6,Y,2026-02-03,2026-02-03
